@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/notification-bell.ico</file>
+        <file>icons/logo.ico</file>
+        <file>icons/AI_image.ico</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file>mainwindow.qss</file>
+        <file>taskdetailsdialog.qss</file>
+        <file>userprofile.qss</file>
+        <file>aidialog.qss</file>
+        <file>appsettings.qss</file>
+    </qresource>
+</RCC>

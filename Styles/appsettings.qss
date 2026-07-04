@@ -1,0 +1,142 @@
+/* ============================================================
+   appsettings.qss
+   MYLIST — AI Settings Dialog
+   Palette: Red & White
+   ============================================================ */
+
+/* ---------- Base ---------- */
+QDialog#AppSettings {
+    background-color: #FFFFFF;
+    border: 1px solid #F0D3D3;
+    border-radius: 10px;
+}
+
+/* ---------- Title ---------- */
+QLabel#label {
+    color: #B71C2B;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+/* ---------- Description text ---------- */
+QLabel#label_5,
+QLabel#label_6 {
+    color: #8C8C8C;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* ---------- Form field labels ---------- */
+QLabel#label_2,
+QLabel#label_3,
+QLabel#label_4 {
+    color: #2B2B2B;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ---------- Text inputs ---------- */
+QLineEdit#server_path,
+QLineEdit#model_path,
+QLineEdit#tokens_number {
+    background-color: #FFFAFA;
+    border: 1.5px solid #E8BFC2;
+    border-radius: 8px;
+    padding: 4px 12px;
+    color: #2B2B2B;
+    font-size: 12px;
+    selection-background-color: #C41E2F;
+    selection-color: #FFFFFF;
+}
+
+QLineEdit#server_path:focus,
+QLineEdit#model_path:focus,
+QLineEdit#tokens_number:focus {
+    border: 1.5px solid #C41E2F;
+    background-color: #FFFFFF;
+}
+
+QLineEdit#server_path:hover,
+QLineEdit#model_path:hover,
+QLineEdit#tokens_number:hover {
+    border: 1.5px solid #D98D93;
+}
+
+/* ---------- Browse buttons (outlined) ---------- */
+QPushButton#btn_browse_server,
+QPushButton#pushButton {
+    background-color: #FFFFFF;
+    color: #C41E2F;
+    border: 1.5px solid #C41E2F;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+QPushButton#btn_browse_server:hover,
+QPushButton#pushButton:hover {
+    background-color: #FFF1F1;
+}
+
+QPushButton#btn_browse_server:pressed,
+QPushButton#pushButton:pressed {
+    background-color: #FFE1E1;
+}
+
+/* ---------- Save button (filled, primary action) ---------- */
+QPushButton#btn_save_settings {
+    background-color: #C41E2F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 19px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+QPushButton#btn_save_settings:hover {
+    background-color: #A6182A;
+}
+
+QPushButton#btn_save_settings:pressed {
+    background-color: #8C1420;
+}
+
+QPushButton#btn_save_settings:disabled {
+    background-color: #E8BFC2;
+    color: #FFF5F5;
+}
+
+/* ── QMESSAGEBOX ── */
+QMessageBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E53935;
+    border-radius: 2px;
+}
+QMessageBox QLabel {
+    color: #1A1A1A;
+    font-size: 11pt;
+    font-weight: 400;
+    min-width: 160px;
+    min-height: 15px;
+    padding: 20px 40px;
+}
+
+QMessageBox QPushButton {
+    background-color: #E53935;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    min-height: 28px;
+    font-size: 10pt;
+    font-weight: 600;
+    padding: 4px 12px;
+}
+QMessageBox QPushButton:hover {
+    background-color: #EF5350;
+}
+QMessageBox QPushButton:pressed {
+    background-color: #C62828;
+}
+

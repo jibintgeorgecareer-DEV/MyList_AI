@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1246</width>
+    <height>524</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing"><number>0</number></property>
+    <property name="leftMargin"><number>0</number></property>
+    <property name="topMargin"><number>0</number></property>
+    <property name="rightMargin"><number>0</number></property>
+    <property name="bottomMargin"><number>0</number></property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex"><number>2</number></property>
+
+      <!-- ══════════════════════════════════════════
+           PAGE 0 — LOGIN PAGE
+      ══════════════════════════════════════════ -->
+      <widget class="QWidget" name="LoginPage">
+       <layout class="QVBoxLayout" name="verticalLayout_LoginPage">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item>
+         <spacer name="verticalSpacer_top">
+          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+          <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_center">
+          <property name="spacing"><number>0</number></property>
+          <item>
+           <spacer name="horizontalSpacer_left">
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_card">
+            <property name="minimumSize"><size><width>360</width><height>0</height></size></property>
+            <property name="maximumSize"><size><width>360</width><height>16777215</height></size></property>
+            <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+            <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+            <layout class="QVBoxLayout" name="verticalLayout_card">
+             <property name="spacing"><number>14</number></property>
+             <property name="leftMargin"><number>40</number></property>
+             <property name="topMargin"><number>40</number></property>
+             <property name="rightMargin"><number>40</number></property>
+             <property name="bottomMargin"><number>40</number></property>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text"><string>MYLIST</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_greeting">
+               <property name="text"><string>Welcome back — your tasks are waiting.</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_mid">
+               <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+               <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text"><string>USERNAME</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="login_name">
+               <property name="placeholderText"><string>Enter your username</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text"><string>PASSWORD</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="login_password">
+               <property name="echoMode"><enum>QLineEdit::EchoMode::Password</enum></property>
+               <property name="placeholderText"><string>Enter your password</string></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_btn">
+               <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+               <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>20</width><height>6</height></size></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_login">
+               <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
+               <property name="text"><string>LOG IN</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_goto_register">
+               <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
+               <property name="text"><string>Don't have an account? Register</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_footer">
+               <property name="text"><string>Secure &amp; private · Your data stays yours</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_right">
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_bottom">
+          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+          <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- ══════════════════════════════════════════
+           PAGE 1 — REGISTER PAGE
+      ══════════════════════════════════════════ -->
+      <widget class="QWidget" name="RegisterPage">
+       <layout class="QVBoxLayout" name="verticalLayout_RegisterPage">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item>
+         <spacer name="reg_verticalSpacer_top">
+          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+          <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="reg_horizontalLayout_center">
+          <property name="spacing"><number>0</number></property>
+          <item>
+           <spacer name="reg_horizontalSpacer_left">
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QFrame" name="reg_frame_card">
+            <property name="minimumSize"><size><width>380</width><height>0</height></size></property>
+            <property name="maximumSize"><size><width>380</width><height>16777215</height></size></property>
+            <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+            <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+            <layout class="QVBoxLayout" name="reg_verticalLayout_card">
+             <property name="spacing"><number>14</number></property>
+             <property name="leftMargin"><number>40</number></property>
+             <property name="topMargin"><number>40</number></property>
+             <property name="rightMargin"><number>40</number></property>
+             <property name="bottomMargin"><number>40</number></property>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text"><string>MYLIST</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="reg_label_greeting">
+               <property name="text"><string>Create your account — get organised today.</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="reg_verticalSpacer_mid">
+               <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+               <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text"><string>USERNAME</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="register_name">
+               <property name="placeholderText"><string>Choose a username</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="text"><string>EMAIL</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="register_email">
+               <property name="placeholderText"><string>Enter your email address</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text"><string>PASSWORD</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="register_password">
+               <property name="echoMode"><enum>QLineEdit::EchoMode::Password</enum></property>
+               <property name="placeholderText"><string>Create a password</string></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="reg_verticalSpacer_btn">
+               <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+               <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>20</width><height>6</height></size></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_register_button">
+               <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
+               <property name="text"><string>CREATE ACCOUNT</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_goto_login">
+               <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
+               <property name="text"><string>Already have an account? Log In</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="reg_label_footer">
+               <property name="text"><string>Secure &amp; private · Your data stays yours</string></property>
+               <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="reg_horizontalSpacer_right">
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeType"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="reg_verticalSpacer_bottom">
+          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+          <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- ══════════════════════════════════════════
+           PAGE 2 — DASHBOARD
+      ══════════════════════════════════════════ -->
+      <widget class="QWidget" name="DashboardPage">
+       <layout class="QHBoxLayout" name="dash_outerLayout">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+
+        <!-- ─────────────────────────────────────────
+             LEFT SIDEBAR
+             Contains: greeting + stats + filters + delete button
+        ───────────────────────────────────────── -->
+        <item>
+         <widget class="QFrame" name="dash_sidebar">
+          <property name="minimumSize"><size><width>200</width><height>0</height></size></property>
+          <property name="maximumSize"><size><width>220</width><height>16777215</height></size></property>
+          <property name="frameShape"><enum>QFrame::Shape::NoFrame</enum></property>
+          <layout class="QVBoxLayout" name="dash_sidebarLayout">
+           <property name="spacing"><number>12</number></property>
+           <property name="leftMargin"><number>16</number></property>
+           <property name="topMargin"><number>16</number></property>
+           <property name="rightMargin"><number>16</number></property>
+           <property name="bottomMargin"><number>16</number></property>
+
+           <!-- Greeting row -->
+           <item>
+            <layout class="QHBoxLayout" name="dash_greetingRow">
+             <property name="spacing"><number>6</number></property>
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text"><string>Hello,</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="dash_username">
+               <property name="text"><string>User</string></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="greet_spacer">
+               <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>10</width><height>0</height></size></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_profile">
+               <property name="maximumSize"><size><width>68</width><height>26</height></size></property>
+               <property name="text"><string>Profile</string></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+
+           <!-- Stats card -->
+           <item>
+            <widget class="QFrame" name="dash_statsCard">
+             <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+             <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+             <layout class="QVBoxLayout" name="dash_statsCardLayout">
+              <property name="spacing"><number>8</number></property>
+              <property name="leftMargin"><number>14</number></property>
+              <property name="topMargin"><number>14</number></property>
+              <property name="rightMargin"><number>14</number></property>
+              <property name="bottomMargin"><number>14</number></property>
+
+              <!-- Total Tasks -->
+              <item>
+               <layout class="QVBoxLayout" name="stat_total_inner">
+                <property name="spacing"><number>2</number></property>
+                <item>
+                 <widget class="QLabel" name="label_13">
+                  <property name="text"><string>Total Tasks</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="total_tasks">
+                  <property name="text"><string>0</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+
+              <item>
+               <spacer name="stat_div1">
+                <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+                <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+                <property name="sizeHint" stdset="0"><size><width>0</width><height>2</height></size></property>
+               </spacer>
+              </item>
+
+              <!-- Completed -->
+              <item>
+               <layout class="QVBoxLayout" name="stat_com_inner">
+                <property name="spacing"><number>2</number></property>
+                <item>
+                 <widget class="QLabel" name="label_14">
+                  <property name="text"><string>Completed</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="com_tasks">
+                  <property name="text"><string>0</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+
+              <item>
+               <spacer name="stat_div2">
+                <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+                <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+                <property name="sizeHint" stdset="0"><size><width>0</width><height>2</height></size></property>
+               </spacer>
+              </item>
+
+              <!-- Pending -->
+              <item>
+               <layout class="QVBoxLayout" name="stat_pen_inner">
+                <property name="spacing"><number>2</number></property>
+                <item>
+                 <widget class="QLabel" name="label_15">
+                  <property name="text"><string>Pending</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="pen_tasks">
+                  <property name="text"><string>0</string></property>
+                  <property name="alignment"><set>Qt::AlignmentFlag::AlignLeft</set></property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+
+             </layout>
+            </widget>
+           </item>
+
+           <!-- Filter by Priority -->
+           <item>
+            <widget class="QLabel" name="dash_lbl_filterpriority">
+             <property name="text"><string>FILTER BY PRIORITY</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="search_priority">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <item><property name="text"><string>Important</string></property></item>
+             <item><property name="text"><string>Important &amp; Urgent</string></property></item>
+             <item><property name="text"><string>Urgent</string></property></item>
+             <item><property name="text"><string>Important NOT Urgent</string></property></item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_searchpriority">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <property name="text"><string>Search by Priority</string></property>
+            </widget>
+           </item>
+
+           <!-- View filter buttons -->
+           <item>
+            <widget class="QLabel" name="dash_lbl_viewfilter">
+             <property name="text"><string>VIEW</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_comtask">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <property name="text"><string>Completed Tasks</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_pentasks">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <property name="text"><string>Pending Tasks</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_alltasks">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <property name="text"><string>All Tasks</string></property>
+            </widget>
+           </item>
+
+           <!-- Spacer pushes delete to bottom -->
+           <item>
+            <spacer name="dash_sidebarSpacer">
+             <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+             <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+             <property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property>
+            </spacer>
+           </item>
+
+           <!-- ── ACTIONS (Delete Task) — moved from center ── -->
+           <item>
+            <widget class="QLabel" name="dash_lbl_actions">
+             <property name="text"><string>ACTIONS</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_deletetask_2">
+             <property name="minimumSize"><size><width>0</width><height>32</height></size></property>
+             <property name="text"><string>Delete Task</string></property>
+            </widget>
+           </item>
+
+          </layout>
+         </widget>
+        </item>
+        <!-- END LEFT SIDEBAR -->
+
+        <!-- ─────────────────────────────────────────
+             CENTER — Search bar + Task list
+        ───────────────────────────────────────── -->
+        <item>
+         <layout class="QVBoxLayout" name="dash_centerLayout">
+          <property name="spacing"><number>8</number></property>
+          <property name="leftMargin"><number>16</number></property>
+          <property name="topMargin"><number>16</number></property>
+          <property name="rightMargin"><number>16</number></property>
+          <property name="bottomMargin"><number>16</number></property>
+
+          <!-- Search row -->
+          <item>
+           <layout class="QHBoxLayout" name="dash_searchRow1">
+            <property name="spacing"><number>8</number></property>
+            <item>
+             <widget class="QLineEdit" name="dash_searchtask">
+              <property name="maximumSize"><size><width>16777215</width><height>38</height></size></property>
+              <property name="placeholderText"><string>Search tasks…</string></property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+
+          <!-- Task list — takes all remaining vertical space -->
+          <item>
+           <widget class="QListWidget" name="task_list">
+            <property name="minimumSize"><size><width>0</width><height>200</height></size></property>
+           </widget>
+          </item>
+
+         </layout>
+        </item>
+        <!-- END CENTER -->
+
+        <!-- ─────────────────────────────────────────
+             RIGHT — Add Task Form (tightened)
+                   + AI Chatbot Logo Button below
+        ───────────────────────────────────────── -->
+        <item>
+         <widget class="QFrame" name="dash_rightPanel">
+          <property name="minimumSize"><size><width>240</width><height>0</height></size></property>
+          <property name="maximumSize"><size><width>280</width><height>16777215</height></size></property>
+          <property name="frameShape"><enum>QFrame::Shape::NoFrame</enum></property>
+          <layout class="QVBoxLayout" name="dash_rightPanelLayout">
+           <property name="spacing"><number>10</number></property>
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+
+           <!-- ── ADD TASK FORM (tightened — no expanding spacer inside) ── -->
+           <item>
+            <widget class="QFrame" name="dash_formCard">
+             <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+             <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+             <!-- Let the form shrink-wrap its content vertically -->
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="dash_formLayout">
+              <property name="spacing"><number>6</number></property>
+              <property name="leftMargin"><number>16</number></property>
+              <property name="topMargin"><number>14</number></property>
+              <property name="rightMargin"><number>16</number></property>
+              <property name="bottomMargin"><number>14</number></property>
+
+              <item>
+               <widget class="QLabel" name="dash_form_title">
+                <property name="text"><string>ADD TASK</string></property>
+                <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+               </widget>
+              </item>
+
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text"><string>TASK</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="dash_task">
+                <property name="minimumSize"><size><width>0</width><height>28</height></size></property>
+                <property name="placeholderText"><string>Task name…</string></property>
+               </widget>
+              </item>
+
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text"><string>DESCRIPTION</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="task_description">
+                <property name="minimumSize"><size><width>0</width><height>28</height></size></property>
+                <property name="placeholderText"><string>Brief description…</string></property>
+               </widget>
+              </item>
+
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="text"><string>DEADLINE</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateEdit" name="task_end">
+                <property name="minimumSize"><size><width>0</width><height>28</height></size></property>
+                <property name="calendarPopup"><bool>true</bool></property>
+               </widget>
+              </item>
+
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text"><string>PRIORITY</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="task_priority">
+                <property name="minimumSize"><size><width>0</width><height>28</height></size></property>
+                <item><property name="text"><string>SELECT PRIORITY</string></property></item>
+                <item><property name="text"><string>Urgent</string></property></item>
+                <item><property name="text"><string>Important</string></property></item>
+                <item><property name="text"><string>Important &amp; Urgent</string></property></item>
+                <item><property name="text"><string>Important NOT Urgent</string></property></item>
+               </widget>
+              </item>
+
+              <!-- Small gap before button — fixed, not expanding -->
+              <item>
+               <spacer name="dash_formBtnSpacer">
+                <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+                <property name="sizeType"><enum>QSizePolicy::Policy::Fixed</enum></property>
+                <property name="sizeHint" stdset="0"><size><width>0</width><height>6</height></size></property>
+               </spacer>
+              </item>
+
+              <item>
+               <widget class="QPushButton" name="btn_addtask">
+                <property name="minimumSize"><size><width>0</width><height>34</height></size></property>
+                <property name="text"><string>Add Task</string></property>
+               </widget>
+              </item>
+
+             </layout>
+            </widget>
+           </item>
+           <!-- END ADD TASK FORM -->
+
+           <!-- ── AI CHATBOT LOGO BUTTON ──
+                Sits in the freed space below the form.
+                Clicking opens the AI Chat dialog from C++ code.
+                Use setIcon() + setFixedSize() in C++ for the actual image.
+                The name "btn_ai_open" is what you connect to in your slot.
+           -->
+           <item>
+            <widget class="QFrame" name="ai_logoFrame">
+             <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+             <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>1</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="ai_logoFrameLayout">
+              <property name="spacing"><number>6</number></property>
+              <property name="leftMargin"><number>16</number></property>
+              <property name="topMargin"><number>16</number></property>
+              <property name="rightMargin"><number>16</number></property>
+              <property name="bottomMargin"><number>16</number></property>
+
+              <!-- Top spacer — centres the button vertically -->
+              <item>
+               <spacer name="ai_logoTopSpacer">
+                <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+                <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+                <property name="sizeHint" stdset="0"><size><width>0</width><height>10</height></size></property>
+               </spacer>
+              </item>
+
+              <!-- AI icon button — set icon in C++:
+                   btn_ai_open->setIcon(QIcon(":/icons/ai_logo.png"));
+                   btn_ai_open->setIconSize(QSize(52, 52));            -->
+              <item>
+               <layout class="QHBoxLayout" name="ai_logoRow">
+                <property name="spacing"><number>0</number></property>
+                <item>
+                 <spacer name="ai_logoLeftSpacer">
+                  <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+                  <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+                  <property name="sizeHint" stdset="0"><size><width>10</width><height>0</height></size></property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_ai_open">
+                  <property name="minimumSize"><size><width>68</width><height>68</height></size></property>
+                  <property name="maximumSize"><size><width>68</width><height>68</height></size></property>
+                  <!-- Fallback text shown if no icon is set -->
+                  <property name="text"><string>✦ AI</string></property>
+                  <property name="toolTip"><string>Open AI Assistant</string></property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="ai_logoRightSpacer">
+                  <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+                  <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+                  <property name="sizeHint" stdset="0"><size><width>10</width><height>0</height></size></property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+
+              <!-- Caption label -->
+              <item>
+               <widget class="QLabel" name="ai_logo_caption">
+                <property name="text"><string>AI Assistant</string></property>
+                <property name="alignment"><set>Qt::AlignmentFlag::AlignHCenter</set></property>
+               </widget>
+              </item>
+
+              <!-- Bottom spacer -->
+              <item>
+               <spacer name="ai_logoBottomSpacer">
+                <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+                <property name="sizeType"><enum>QSizePolicy::Policy::Expanding</enum></property>
+                <property name="sizeHint" stdset="0"><size><width>0</width><height>10</height></size></property>
+               </spacer>
+              </item>
+
+             </layout>
+            </widget>
+           </item>
+           <!-- END AI LOGO FRAME -->
+
+          </layout>
+         </widget>
+        </item>
+        <!-- END RIGHT PANEL -->
+
+       </layout>
+      </widget>
+      <!-- END DASHBOARD PAGE -->
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

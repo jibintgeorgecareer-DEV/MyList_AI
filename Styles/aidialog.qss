@@ -1,0 +1,127 @@
+/* ============================================================
+   aidialog.qss
+   MYLIST — AI Assistant Dialog
+   Palette: Red & White (matches app's auth/general dialog theme)
+   ============================================================ */
+
+/* ---------- Base ---------- */
+QDialog#aiDialog {
+    background-color: #FFFFFF;
+    border: 1px solid #F0D3D3;
+    border-radius: 10px;
+}
+
+/* ---------- Header notes ---------- */
+QLabel#label {
+    color: #B71C2B;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+QLabel#label_2 {
+    color: #8C8C8C;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* ---------- Settings button (outlined) ---------- */
+QPushButton#btn_settings {
+    background-color: #FFFFFF;
+    color: #C41E2F;
+    border: 1.5px solid #C41E2F;
+    border-radius: 8px;
+    padding: 4px 14px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+QPushButton#btn_settings:hover {
+    background-color: #FFF1F1;
+}
+
+QPushButton#btn_settings:pressed {
+    background-color: #FFE1E1;
+}
+
+/* ---------- Chat history (card) ---------- */
+QTextEdit#chat_history {
+    background-color: #FFFAFA;
+    border: 1px solid #F0D3D3;
+    border-radius: 12px;
+    padding: 14px;
+    color: #2B2B2B;
+    font-size: 13px;
+    selection-background-color: #C41E2F;
+    selection-color: #FFFFFF;
+}
+
+QTextEdit#chat_history:focus {
+    border: 1px solid #C41E2F;
+}
+
+/* Scrollbar (red accent) */
+QTextEdit#chat_history QScrollBar:vertical {
+    background: transparent;
+    width: 9px;
+    margin: 4px 0px 4px 0px;
+}
+
+QTextEdit#chat_history QScrollBar::handle:vertical {
+    background: #E39BA3;
+    border-radius: 4px;
+    min-height: 24px;
+}
+
+QTextEdit#chat_history QScrollBar::handle:vertical:hover {
+    background: #C41E2F;
+}
+
+QTextEdit#chat_history QScrollBar::add-line:vertical,
+QTextEdit#chat_history QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* ---------- Input field ---------- */
+QLineEdit#user_question {
+    background-color: #FFFFFF;
+    border: 1.5px solid #E8BFC2;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #2B2B2B;
+    font-size: 13px;
+    selection-background-color: #C41E2F;
+    selection-color: #FFFFFF;
+}
+
+QLineEdit#user_question:focus {
+    border: 1.5px solid #C41E2F;
+    background-color: #FFFFFF;
+}
+
+QLineEdit#user_question:hover {
+    border: 1.5px solid #D98D93;
+}
+
+/* ---------- Ask AI button (filled) ---------- */
+QPushButton#ai_submit {
+    background-color: #C41E2F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+QPushButton#ai_submit:hover {
+    background-color: #A6182A;
+}
+
+QPushButton#ai_submit:pressed {
+    background-color: #8C1420;
+}
+
+QPushButton#ai_submit:disabled {
+    background-color: #E8BFC2;
+    color: #FFF5F5;
+}
