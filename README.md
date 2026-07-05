@@ -1,8 +1,12 @@
 # MyList AI
 
-**MyList AI** is a modern desktop To-Do List application built using **C++** and the **Qt Framework**, featuring an integrated **local AI assistant** powered by **llama.cpp**.
+# MyList AI
 
-Unlike cloud-based AI assistants, MyList AI allows users to run AI models **completely offline** on their own computer. Users can configure their preferred **llama-server** executable and **GGUF AI model** directly from the application, making the AI system flexible and customizable.
+**MyList AI** is a modern desktop productivity application built using **C++** and the **Qt Framework**, featuring an integrated **offline AI assistant** powered by **llama.cpp** and **GGUF Large Language Models (LLMs)**.
+
+The application allows users to interact with a locally running AI that understands their current tasks and provides personalized assistance. Unlike cloud-based AI services, **MyList AI** runs entirely on the user's computer, ensuring privacy while eliminating the need for an internet connection.
+
+A key feature of MyList AI is its **configurable AI environment**. Users can choose their own **llama-server executable**, **GGUF AI model**, and **maximum response token count** directly from the application's settings, allowing them to use different AI models based on their hardware and preferences without modifying the source code.
 
 The application combines task management, reminders, desktop notifications, and AI-powered assistance into a single productivity application.
 
