@@ -270,13 +270,13 @@ Dialog Updates Automatically
 
 ## AI Assistant
 
-![Profile](screenshots/AI_answer.png)
+![AI](screenshots/AI_answer.png)
 
 ---
 
 ## AI Settings
 
-![Task Details](screenshots/settings.png)
+![Settings](screenshots/settings.png)
 
 ---
 
