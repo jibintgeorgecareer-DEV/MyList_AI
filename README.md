@@ -51,8 +51,8 @@ Acts as the user interface for the AI Assistant.
 Responsibilities:
 
 * Receives user questions
-* Collects current task data (From **DATABASEMANAGER**)
-* Builds a structured prompt (Tasks + User Question)
+* Collects current task data        (From **DATABASEMANAGER**)
+* Builds a structured prompt        (Tasks + User Question)
 * Sends the prompt to AIManager
 * Displays AI responses
 
@@ -78,11 +78,54 @@ The core communication layer between the application and **llama-server**.
 
 Responsibilities:
 
-* Starts llama-server.exe (Using **QProcess**)
-* Sends prompts           (Using **QNetworkRequest**)
-* Receives AI responses   (Using **QNetworkReply**)
-* Parses JSON replies     (Using **QJsonDocument**)
+* Starts llama-server.exe       (Using **QProcess**)
+* Sends prompts                 (Using **QNetworkRequest**)
+* Receives AI responses         (Using **QNetworkReply**)
+* Parses JSON replies           (Using **QJsonDocument**)
 * Emits Qt signals back to the UI  (Using connect() in QT)
+
+---
+
+## appsettings.cpp
+
+Provides a graphical settings dialog where users configure their local AI environment.
+
+Features:
+
+* Browse for llama-server.exe
+* Browse for GGUF model
+* Configure maximum token count
+* Save settings using QSettings
+
+This design allows the application to support different AI models without modifying the source code.
+
+---
+
+# AI Workflow
+
+```
+User Question
+        ↓
+aidialog.cpp
+        ↓
+Prompt Generation
+        ↓
+AIManager
+        ↓
+QNetworkRequest
+        ↓
+llama-server
+        ↓
+Local GGUF Model
+        ↓
+JSON Response
+        ↓
+QNetworkReply
+        ↓
+aidialog.cpp
+        ↓
+Display Answer
+```
 
 ### Qt Classes Used
 
@@ -157,49 +200,6 @@ AI Processing
 Signal Emitted
       ↓
 Dialog Updates Automatically
-```
-
----
-
-## appsettings.cpp
-
-Provides a graphical settings dialog where users configure their local AI environment.
-
-Features:
-
-* Browse for llama-server.exe
-* Browse for GGUF model
-* Configure maximum token count
-* Save settings using QSettings
-
-This design allows the application to support different AI models without modifying the source code.
-
----
-
-# AI Workflow
-
-```
-User Question
-        ↓
-aidialog.cpp
-        ↓
-Prompt Generation
-        ↓
-AIManager
-        ↓
-QNetworkRequest
-        ↓
-llama-server
-        ↓
-Local GGUF Model
-        ↓
-JSON Response
-        ↓
-QNetworkReply
-        ↓
-aidialog.cpp
-        ↓
-Display Answer
 ```
 
 ---
