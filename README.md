@@ -264,25 +264,25 @@ Dialog Updates Automatically
 
 ## Dashboard
 
-![Dashboard](screenshots/Home.png)
+![Dashboard](sreenshots/Home.png)
 
 ---
 
 ## AI Assistant
 
-![AI](screenshots/AI_answer.png)
+![AI](sreenshots/AI_answer.png)
 
 ---
 
 ## AI Settings
 
-![Settings](screenshots/settings.png)
+![Settings](sreenshots/settings.png)
 
 ---
 
 ## Task
 
-![Task Details](screenshots/task.png)
+![Task Details](sreenshots/task.png)
 
 ---
 
@@ -385,14 +385,11 @@ Displays user information and exports task data into TXT format.
 Planned features include:
 
 * Natural Language Task Creation
-* AI Task Prioritization
-* Smart Reminder Suggestions
 * Productivity Analytics
 * AI Calendar Planning
 * Voice Interaction
 * Multi-model Support
-* Streaming AI Responses
-
+* CRUD operation using AI
 ---
 
 # Author
