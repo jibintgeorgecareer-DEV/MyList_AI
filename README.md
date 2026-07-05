@@ -262,39 +262,27 @@ Dialog Updates Automatically
 
 # Screenshots
 
-## Login
-
-![Login](screenshots/Login.png)
-
----
-
 ## Dashboard
 
-![Dashboard](screenshots/Dashboard.png)
-
----
-
-## User Profile
-
-![Profile](screenshots/profile.png)
-
----
-
-## Task Details
-
-![Task Details](screenshots/task_details.png)
+![Dashboard](screenshots/Home.png)
 
 ---
 
 ## AI Assistant
 
-*(Add screenshot here)*
+![Profile](screenshots/AI_answer.png)
 
 ---
 
 ## AI Settings
 
-*(Add screenshot here)*
+![Task Details](screenshots/settings.png)
+
+---
+
+## Task
+
+![Task Details](screenshots/task.png)
 
 ---
 
