@@ -38,6 +38,172 @@ This allows users to experiment with different local models depending on their h
 
 ---
 
+# AI System Architecture
+
+The AI Assistant is divided into three independent modules. aidialog(UI) <-> aimanager <-> appsettings
+
+---
+
+## aidialog.cpp
+
+Acts as the user interface for the AI Assistant.
+
+Responsibilities:
+
+* Receives user questions
+* Collects current task data (From **DATABASEMANAGER**)
+* Builds a structured prompt (Tasks + User Question)
+* Sends the prompt to AIManager
+* Displays AI responses
+
+Example workflow:
+
+```
+User Question
+        ↓
+Create Prompt
+        ↓
+Send to AIManager
+        ↓
+Receive AI Response
+        ↓
+Display Response
+```
+
+---
+
+## aimanager.cpp
+
+The core communication layer between the application and **llama-server**.
+
+Responsibilities:
+
+* Starts llama-server.exe (Using **QProcess**)
+* Sends prompts           (Using **QNetworkRequest**)
+* Receives AI responses   (Using **QNetworkReply**)
+* Parses JSON replies     (Using **QJsonDocument**)
+* Emits Qt signals back to the UI  (Using connect() in QT)
+
+### Qt Classes Used
+
+### QProcess
+
+Starts and manages **llama-server.exe** as a separate process from the application.
+
+---
+
+### QNetworkAccessManager
+
+Handles all HTTP communication with the local AI server.
+
+---
+
+### QNetworkRequest
+
+Builds HTTP requests such as:
+
+* `/completion`
+* `/health`
+
+before sending them to the server.
+
+---
+
+### QNetworkReply
+
+Receives the HTTP response returned by llama-server and reports network errors if they occur.
+
+---
+
+### QJsonDocument
+
+Converts JSON data between Qt objects and raw JSON text.
+
+Used for both sending prompts and reading AI responses.
+
+---
+
+### QByteArray
+
+Stores the raw byte data received from the AI server before it is converted into JSON.
+
+---
+
+### QSettings
+
+Reads user-configured settings including:
+
+* llama-server path
+* GGUF model path
+* Maximum AI response tokens
+
+These settings persist even after restarting the application.
+
+---
+
+### Qt Signals & Slots (`connect()`)
+
+The AI system is fully asynchronous.
+
+The UI never freezes while waiting for the AI.
+
+Workflow:
+
+```
+Send Prompt
+      ↓
+AI Processing
+      ↓
+Signal Emitted
+      ↓
+Dialog Updates Automatically
+```
+
+---
+
+## appsettings.cpp
+
+Provides a graphical settings dialog where users configure their local AI environment.
+
+Features:
+
+* Browse for llama-server.exe
+* Browse for GGUF model
+* Configure maximum token count
+* Save settings using QSettings
+
+This design allows the application to support different AI models without modifying the source code.
+
+---
+
+# AI Workflow
+
+```
+User Question
+        ↓
+aidialog.cpp
+        ↓
+Prompt Generation
+        ↓
+AIManager
+        ↓
+QNetworkRequest
+        ↓
+llama-server
+        ↓
+Local GGUF Model
+        ↓
+JSON Response
+        ↓
+QNetworkReply
+        ↓
+aidialog.cpp
+        ↓
+Display Answer
+```
+
+---
+
 # Features
 
 ## User Authentication
@@ -224,172 +390,7 @@ Displays user information and exports task data into TXT format.
 
 ---
 
-# AI System Architecture
 
-The AI Assistant is divided into three independent modules.
-
----
-
-## aidialog.cpp
-
-Acts as the user interface for the AI Assistant.
-
-Responsibilities:
-
-* Receives user questions
-* Collects current task data
-* Builds a structured prompt
-* Sends the prompt to AIManager
-* Displays AI responses
-
-Example workflow:
-
-```
-User Question
-        ↓
-Create Prompt
-        ↓
-Send to AIManager
-        ↓
-Receive AI Response
-        ↓
-Display Response
-```
-
----
-
-## aimanager.cpp
-
-The core communication layer between the application and **llama-server**.
-
-Responsibilities:
-
-* Starts llama-server.exe
-* Checks server health
-* Sends prompts
-* Receives AI responses
-* Parses JSON replies
-* Emits Qt signals back to the UI
-
-### Qt Classes Used
-
-### QProcess
-
-Starts and manages **llama-server.exe** as a separate process from the application.
-
----
-
-### QNetworkAccessManager
-
-Handles all HTTP communication with the local AI server.
-
----
-
-### QNetworkRequest
-
-Builds HTTP requests such as:
-
-* `/completion`
-* `/health`
-
-before sending them to the server.
-
----
-
-### QNetworkReply
-
-Receives the HTTP response returned by llama-server and reports network errors if they occur.
-
----
-
-### QJsonDocument
-
-Converts JSON data between Qt objects and raw JSON text.
-
-Used for both sending prompts and reading AI responses.
-
----
-
-### QByteArray
-
-Stores the raw byte data received from the AI server before it is converted into JSON.
-
----
-
-### QSettings
-
-Reads user-configured settings including:
-
-* llama-server path
-* GGUF model path
-* Maximum AI response tokens
-
-These settings persist even after restarting the application.
-
----
-
-### Qt Signals & Slots (`connect()`)
-
-The AI system is fully asynchronous.
-
-The UI never freezes while waiting for the AI.
-
-Workflow:
-
-```
-Send Prompt
-      ↓
-AI Processing
-      ↓
-Signal Emitted
-      ↓
-Dialog Updates Automatically
-```
-
----
-
-## appsettings.cpp
-
-Provides a graphical settings dialog where users configure their local AI environment.
-
-Features:
-
-* Browse for llama-server.exe
-* Browse for GGUF model
-* Configure maximum token count
-* Save settings using QSettings
-
-This design allows the application to support different AI models without modifying the source code.
-
----
-
-# AI Workflow
-
-```
-User Question
-        ↓
-aidialog.cpp
-        ↓
-Prompt Generation
-        ↓
-AIManager
-        ↓
-QNetworkRequest
-        ↓
-llama-server
-        ↓
-Local GGUF Model
-        ↓
-JSON Response
-        ↓
-QNetworkReply
-        ↓
-aidialog.cpp
-        ↓
-Display Answer
-```
-
----
 
 # Future Improvements
 
