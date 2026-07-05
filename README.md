@@ -10,6 +10,34 @@ The application combines **task management, reminders, desktop notifications, an
 
 ---
 
+## The AI Assistant System
+
+The built-in AI Assistant understands the user's current task list and answers questions using a locally running Large Language Model (LLM).
+
+Example prompts:
+
+* *What are my pending tasks?*
+* *Which task should I complete first?*
+* *Summarize my current workload.*
+
+The AI receives tasks details (sqlite) & User Questions from aidialog.ui and returns response to user. 
+
+---
+
+## Configurable AI Environment
+
+One of the main features of **MyList AI** is that users are **not limited to a fixed AI model**.
+
+Users can configure:
+
+* Path to **llama-server.exe**
+* Path to any compatible **GGUF AI model**
+* Maximum response **token count**
+
+This allows users to experiment with different local models depending on their hardware and requirements.
+
+---
+
 # Features
 
 ## User Authentication
@@ -52,35 +80,7 @@ The application combines **task management, reminders, desktop notifications, an
 
 ---
 
-## AI Assistant
 
-The built-in AI Assistant understands the user's current task list and answers questions using a locally running Large Language Model.
-
-Example prompts:
-
-* *What are my pending tasks?*
-* *Which task should I complete first?*
-* *Summarize my current workload.*
-* *Give me a study plan based on my tasks.*
-* *Explain today's schedule.*
-
-The AI receives the user's current tasks as context before generating a response, allowing it to provide personalized answers.
-
----
-
-## Configurable AI Environment
-
-One of the main features of **MyList AI** is that users are **not limited to a fixed AI model**.
-
-Users can configure:
-
-* Path to **llama-server.exe**
-* Path to any compatible **GGUF AI model**
-* Maximum response token count
-
-This allows users to experiment with different local models depending on their hardware and requirements.
-
----
 
 # Technologies Used
 
