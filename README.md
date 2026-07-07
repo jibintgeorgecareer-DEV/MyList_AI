@@ -1,302 +1,135 @@
 # MyList AI
 
-**MyList AI** is a modern desktop productivity application built using **C++** and the **Qt Framework**, featuring an integrated **offline AI assistant** powered by **llama.cpp** and **GGUF Large Language Models (LLMs)**.
-
-The application allows users to interact with a **locally running AI** that understands their current tasks and provides personalized assistance. Unlike cloud-based AI services, **MyList AI** runs entirely on the user's computer, ensuring privacy while eliminating the need for an internet connection.
-
-A key feature of MyList AI is its **configurable AI environment**. Users can choose their own **llama-server executable**, **GGUF AI model**, and **maximum response token count** directly from the application's settings, allowing them to use different AI models based on their hardware and preferences without modifying the source code.
-
-The application combines **task management, reminders, desktop notifications, and AI-assistance** into a single productivity application.
+A desktop productivity app built with **C++** and **Qt**, featuring an integrated **offline AI assistant** powered by **llama.cpp** and **GGUF LLMs** — task management, reminders, and notifications, with a local AI that understands your task list and answers questions about it. No cloud, no internet required.
 
 ---
 
-## The AI Assistant System
+## Screenshots
 
-The built-in AI Assistant understands the user's current task list and answers questions using a locally running Large Language Model (LLM).
+| Dashboard | AI Assistant |
+|---|---|
+| ![Dashboard](sreenshots/Home.png) | ![AI](sreenshots/AI_answer.png) |
 
-Example prompts:
-
-* *What are my pending tasks?*
-* *Which task should I complete first?*
-* *Summarize my current workload.*
-
-The AI receives tasks details (sqlite) & User Questions from aidialog.ui and returns response to user. 
+| AI Settings | Task Details |
+|---|---|
+| ![Settings](sreenshots/settings.png) | ![Task Details](sreenshots/task.png) |
 
 ---
 
-## Configurable AI Environment
+## Features
 
-One of the main features of **MyList AI** is that users are **not limited to a fixed AI model**.
+**Task Management**
+- Create, edit, delete, search tasks
+- Pending / completed filtering
+- Priority levels and due dates
 
-Users can configure:
+**Reminders & Notifications**
+- Automatic reminder alerts and deadline tracking
+- Native desktop notifications for overdue tasks (`QSystemTrayIcon`), shown even while using the app
 
-* Path to **llama-server.exe**
-* Path to any compatible **GGUF AI model**
-* Maximum response **token count**
+**Authentication**
+- User registration, login, and session management
 
-This allows users to experiment with different local models depending on their hardware and requirements.
+**AI Assistant**
+- Local, offline LLM that reads your current task list and answers questions about it
+- No data leaves your machine
 
----
-
-# AI System Architecture
-
-The AI Assistant is divided into three independent modules. aidialog(UI) <-> aimanager <-> appsettings
-
----
-
-## aidialog.cpp
-
-Acts as the user interface for the AI Assistant.
-
-Responsibilities:
-
-* Receives user questions
-* Collects current task data        (From **DATABASEMANAGER**)
-* Builds a structured prompt        (Tasks + User Question)
-* Sends the prompt to AIManager
-* Displays AI responses
-
-Example workflow:
-
-```
-User Question
-        ↓
-Create Prompt
-        ↓
-Send to AIManager
-        ↓
-Receive AI Response
-        ↓
-Display Response
-```
-
----
-
-## aimanager.cpp
-
-The core communication layer between the application and **llama-server**.
-
-Responsibilities:
-
-* Starts llama-server.exe       (Using **QProcess**)
-* Sends prompts                 (Using **QNetworkRequest**)
-* Receives AI responses         (Using **QNetworkReply**)
-* Parses JSON replies           (Using **QJsonDocument**)
-* Emits Qt signals back to the UI  (Using connect() in QT)
-
----
-
-## appsettings.cpp
-
-Provides a graphical settings dialog where users configure their local AI environment.
-
-Features:
-
-* Browse for llama-server.exe
-* Browse for GGUF model
-* Configure maximum token count
-* Save settings using QSettings
-
-This design allows the application to support different AI models without modifying the source code.
-
----
-
-# AI Workflow
-
-```
-User Question
-        ↓
-aidialog.cpp
-        ↓
-Prompt Generation
-        ↓
-AIManager
-        ↓
-QNetworkRequest
-        ↓
-llama-server
-        ↓
-Local GGUF Model
-        ↓
-JSON Response
-        ↓
-QNetworkReply
-        ↓
-aidialog.cpp
-        ↓
-Display Answer
-```
-
-### Qt Classes Used
-
-### QProcess
-
-Starts and manages **llama-server.exe** as a separate process from the application.
-
----
-
-### QNetworkAccessManager
-
-Handles all HTTP communication with the local AI server.
-
----
-
-### QNetworkRequest
-
-Builds HTTP requests such as:
-
-* `/completion`
-* `/health`
-
-before sending them to the server.
-
----
-
-### QNetworkReply
-
-Receives the HTTP response returned by llama-server and reports network errors if they occur.
-
----
-
-### QJsonDocument
-
-Converts JSON data between Qt objects and raw JSON text.
-
-Used for both sending prompts and reading AI responses.
-
----
-
-### QByteArray
-
-Stores the raw byte data received from the AI server before it is converted into JSON.
-
----
-
-### QSettings
-
-Reads user-configured settings including:
-
-* llama-server path
-* GGUF model path
-* Maximum AI response tokens
-
-These settings persist even after restarting the application.
-
----
-
-### Qt Signals & Slots (`connect()`)
-
-The AI system is fully asynchronous.
-
-The UI never freezes while waiting for the AI.
-
-Workflow:
-
-```
-Send Prompt
-      ↓
-AI Processing
-      ↓
-Signal Emitted
-      ↓
-Dialog Updates Automatically
-```
-
----
-
-# Features
-
-## User Authentication
-
-* Secure User Registration
-* User Login System
-* Session Management
-
----
-
-## Task Management
-
-* Create Tasks
-* Edit Task Details
-* Delete Tasks
-* Search Tasks
-* Pending / Completed Task Filtering
-* Task Priority Support
-* Due Date Management
-
----
-
-## Reminder System
-
-* Automatic Reminder Alerts
-* Deadline Tracking
-
----
-
-## Overdue Desktop Notifications
-
-* Native Desktop Notifications using **QSystemTrayIcon**
-* Displays overdue tasks even while using the application
-
----
-
-## Task Export
-
-* Export all user tasks into a **TXT** file
-
----
-
-
-
-# Technologies Used
-
-* C++
-* Qt Framework
-* SQLite
-* Qt Style Sheets (QSS)
-* CMake
-* llama.cpp
-* GGUF AI Models
-
----
-
-# Screenshots
-
-## Dashboard
-
-![Dashboard](sreenshots/Home.png)
+**Export**
+- Export all tasks to a TXT file
 
 ---
 
 ## AI Assistant
 
-![AI](sreenshots/AI_answer.png)
+The AI Assistant reads your current tasks and answers questions about them using a locally running LLM — no cloud calls.
+
+Example prompts:
+- *What are my pending tasks?*
+- *Which task should I complete first?*
+- *Summarize my current workload.*
+
+**How it works:** your question and current task data (from SQLite) are combined into a structured prompt, sent to a locally running `llama-server` instance, and the response is streamed back into the AI dialog.
+
+```
+User question + current tasks
+        ↓
+  Prompt built (aidialog.cpp)
+        ↓
+  Sent to AIManager → llama-server (local GGUF model)
+        ↓
+  JSON response parsed
+        ↓
+  Displayed in AI dialog
+```
+
+The whole exchange is asynchronous (Qt signals/slots), so the UI never freezes while waiting on a response.
+
+### Configurable AI environment
+
+Nothing is hardcoded — users configure their own setup from Settings:
+- Path to `llama-server.exe`
+- Path to any compatible GGUF model
+- Maximum response token count
+
+This means MyList AI isn't tied to one model — swap in whatever fits your hardware, no source changes needed. Settings persist across restarts via `QSettings`.
 
 ---
 
-## AI Settings
+## Architecture
 
-![Settings](sreenshots/settings.png)
+The AI system is split into three cooperating modules:
+
+```
+aidialog (UI)  ⇄  aimanager  ⇄  appsettings
+```
+
+| Module | Responsibility |
+|---|---|
+| **aidialog.cpp** | UI layer — takes the user's question, pulls current task data from `DatabaseManager`, builds the prompt, sends it to `AIManager`, and displays the response. |
+| **aimanager.cpp** | Communication layer — starts `llama-server` (`QProcess`), sends the prompt (`QNetworkRequest`), receives the response (`QNetworkReply`), and parses the JSON (`QJsonDocument`). |
+| **appsettings.cpp** | Settings UI — lets users browse for `llama-server.exe` and a GGUF model, set max token count, and persist it all via `QSettings`. |
+
+### Key Qt classes used
+
+| Class | Role |
+|---|---|
+| `QProcess` | Starts and manages `llama-server.exe` as a separate process |
+| `QNetworkAccessManager` / `QNetworkRequest` / `QNetworkReply` | Handles HTTP communication with the local AI server (`/completion`, `/health`) |
+| `QJsonDocument` / `QByteArray` | Converts between raw response bytes and JSON |
+| `QSettings` | Persists llama-server path, model path, and token limit across restarts |
+| Signals & Slots | Keeps the AI request fully asynchronous so the UI never blocks |
 
 ---
 
-## Task
+## Main modules (beyond the AI system)
 
-![Task Details](sreenshots/task.png)
+| File | Responsibility |
+|---|---|
+| `main.cpp` | Application entry point |
+| `mainwindow.cpp` | UI, navigation, task management, reminders, notifications, launches the AI Assistant |
+| `authmanager.cpp` | Registration, login, current-user management |
+| `taskmanager.cpp` | Task CRUD, search, filtering, statistics |
+| `databasemanager.cpp` | SQLite connection, initialization, table creation |
+| `taskdetailsdialog.cpp` | Full detail view for a selected task |
+| `userprofile.cpp` | User info display and TXT export |
 
 ---
 
-# Project Structure
+## Tech Stack
+
+C++ · Qt Framework · SQLite · Qt Style Sheets (QSS) · CMake · llama.cpp · GGUF models
+
+---
+
+## Project Structure
 
 ```text
 MYLIST_AI/
-│
 ├── Forms/
 ├── Headers/
 ├── Sources/
 ├── Styles/
 ├── icons/
-│
 ├── resources.qrc
 ├── CMakeLists.txt
 ├── README.md
@@ -305,97 +138,20 @@ MYLIST_AI/
 
 ---
 
-# Main Modules
+## Future Improvements
 
-## main.cpp
-
-Application entry point.
-
-Initializes the Qt application and launches the main window.
-
----
-
-## mainwindow.cpp
-
-Contains the primary application logic.
-
-Responsibilities include:
-
-* User Interface
-* Task Management
-* Navigation
-* Reminder System
-* Desktop Notifications
-* Opening the AI Assistant
+- Natural language task creation
+- Productivity analytics
+- AI-driven calendar planning
+- Voice interaction
+- Multi-model support
+- CRUD operations via AI
 
 ---
 
-## authmanager.cpp
-
-Handles:
-
-* User Registration
-* Login Authentication
-* Current User Management
-
----
-
-## taskmanager.cpp
-
-Handles all task-related database operations.
-
-Responsibilities include:
-
-* Create
-* Read
-* Update
-* Delete
-* Search
-* Filter
-* Statistics
-
----
-
-## databasemanager.cpp
-
-Responsible for:
-
-* SQLite Connection
-* Database Initialization
-* Table Creation
-
----
-
-## taskdetailsdialog.cpp
-
-Displays complete information about a selected task.
-
----
-
-## userprofile.cpp
-
-Displays user information and exports task data into TXT format.
-
----
-
-
-
-# Future Improvements
-
-Planned features include:
-
-* Natural Language Task Creation
-* Productivity Analytics
-* AI Calendar Planning
-* Voice Interaction
-* Multi-model Support
-* CRUD operation using AI
----
-
-# Author
+## Author
 
 **Jibin George**
-
 Bachelor of Computer Applications (BCA)
 
-Built using **C++**, **Qt Framework**, **SQLite**, and **llama.cpp**.
+Built with C++, Qt Framework, SQLite, and llama.cpp.
