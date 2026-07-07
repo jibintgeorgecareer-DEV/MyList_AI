@@ -20,7 +20,7 @@ A desktop productivity app built with **C++** and **Qt**, featuring an integrate
 
 **Task Management**
 - Create, edit, delete, search tasks
-- Pending / completed filtering
+- Pending / completed filtering / Live search
 - Priority levels and due dates
 
 **Reminders & Notifications**
@@ -32,6 +32,7 @@ A desktop productivity app built with **C++** and **Qt**, featuring an integrate
 
 **AI Assistant**
 - Local, offline LLM that reads your current task list and answers questions about it
+- Fetch Tasks from DB -> create prompt (tasks + user question) -> LLM 
 - No data leaves your machine
 
 **Export**
@@ -66,7 +67,7 @@ The whole exchange is asynchronous (Qt signals/slots), so the UI never freezes w
 
 ### Configurable AI environment
 
-Nothing is hardcoded — users configure their own setup from Settings:
+Nothing is hardcoded — users configure their own AI setup from Settings:
 - Path to `llama-server.exe`
 - Path to any compatible GGUF model
 - Maximum response token count
@@ -151,7 +152,8 @@ MYLIST_AI/
 
 ## Author
 
-**Jibin George**
+**Jibin T George**
 Bachelor of Computer Applications (BCA)
+PERSONAL PROJECT
 
 Built with C++, Qt Framework, SQLite, and llama.cpp.
