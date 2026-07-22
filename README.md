@@ -152,7 +152,7 @@ MYLIST_AI/
 
 ## Author
 
-**Jibin T George**
+**Jibin T George**      
 Bachelor of Computer Applications (BCA)
 PERSONAL PROJECT
 
