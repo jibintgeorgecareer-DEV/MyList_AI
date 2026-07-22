@@ -153,7 +153,7 @@ MYLIST_AI/
 ## Author
 
 **Jibin T George**      
-Bachelor of Computer Applications (BCA)
+Bachelor of Computer Applications (BCA)                      
 PERSONAL PROJECT
 
 Built with C++, Qt Framework, SQLite, and llama.cpp.
